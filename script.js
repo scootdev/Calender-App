@@ -19,11 +19,22 @@ $(document).ready(function () {
                 $(pastHour).toggleClass("future").toggleClass("past");
                 
             }
-        }       
+        }
+        
+        // retrieve local storage
+        for (var i = 9; i < 18; i++) {
+            var saveHour = "#hour-" + i;
+            var saveContent = localStorage.getItem(saveHour);
+            $(saveHour).children().val(saveContent);  
+        }
     }
 
 
 
     init();
-    console.log(moment().hour());
+    $(".saveBtn").on("click", function() {
+        var saveHour = "#hour-" + $(this).data("hour");
+        var saveContent = $(saveHour).children().val();
+        localStorage.setItem(saveHour, saveContent);
+    })
 })
