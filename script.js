@@ -17,9 +17,11 @@ $(document).ready(function () {
                 for (var i = 9; i < moment().hour(); i++) {
                 var pastHour = "#hour-" + i;
                 $(pastHour).toggleClass("future").toggleClass("past");
+                $(pastHour).children().prop("disabled", true);
                 
             }
         }
+
         
         // retrieve local storage
         for (var i = 9; i < 18; i++) {
