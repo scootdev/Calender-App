@@ -31,9 +31,9 @@ $(document).ready(function () {
         }
     }
 
-
-
     init();
+    
+    // when the save button is clicked
     $(".saveBtn").on("click", function() {
         var saveHour = "#hour-" + $(this).data("hour");
         var saveContent = $(saveHour).children().val();
