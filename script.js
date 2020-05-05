@@ -17,7 +17,6 @@ $(document).ready(function () {
                 for (var i = 9; i < moment().hour(); i++) {
                 var pastHour = "#hour-" + i;
                 $(pastHour).toggleClass("future").toggleClass("past");
-                $(pastHour).children().prop("disabled", true);
                 
             }
         }
@@ -32,6 +31,7 @@ $(document).ready(function () {
     }
 
     init();
+
     
     // when the save button is clicked
     $(".saveBtn").on("click", function() {
